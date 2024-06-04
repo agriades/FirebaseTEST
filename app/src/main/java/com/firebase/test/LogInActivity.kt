@@ -23,6 +23,10 @@ class LogInActivity : Activity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
             Firebase.auth.signInWithEmailAndPassword(email, password)
+
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("email", email)
+            startActivity(intent)
         }
 
         binding.btnSignUp.setOnClickListener {
