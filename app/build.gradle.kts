@@ -53,5 +53,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))//firebase BoM 임포트
-    implementation("com.google.firebase:firebase-auth") //Authentication. 현재 계정이 유효한지 체크
+    implementation("com.google.firebase:firebase-auth-ktx:23.0.0") //Authentication. 현재 계정이 유효한지 체크
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1") //ViewModel
+//    implementation("androidx.activity:activity-ktx:1.9.0") by viewModel
+//    implementation("androidx.fragment:fragment-ktx:1.7.1")
 }

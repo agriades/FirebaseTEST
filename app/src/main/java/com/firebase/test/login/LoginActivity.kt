@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.firebase.test.MainActivity
-import com.firebase.test.signup.SignupActivity
 import com.firebase.test.databinding.ActivityLogInBinding
+import com.firebase.test.signup.SignupActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -15,15 +15,20 @@ import com.google.firebase.ktx.Firebase
  */
 
 class LoginActivity : Activity() {
+    private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLogInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        onButtons(binding)
+    }
+
+    private fun onButtons(binding: ActivityLogInBinding) {
         onLoginButton(binding)
         onSignupButton(binding)
     }
-
     private fun onLoginButton(binding: ActivityLogInBinding) {
         binding.btnLogIn.setOnClickListener {
             val email = binding.etEmail.text.toString()
