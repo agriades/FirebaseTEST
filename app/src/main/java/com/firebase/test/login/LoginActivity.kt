@@ -7,8 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.firebase.test.MainActivity
 import com.firebase.test.databinding.ActivityLogInBinding
 import com.firebase.test.signup.SignupActivity
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 /**
  * Demonstrate Firebase Authentication using a custom minted token. For more information, see:
@@ -36,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogIn.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
-            Firebase.auth.signInWithEmailAndPassword(email, password)
+            loginViewModel.loginWithEmail(email, password)
 
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("email", email)
