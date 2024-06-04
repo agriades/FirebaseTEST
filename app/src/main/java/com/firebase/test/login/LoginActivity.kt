@@ -24,9 +24,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-
-
         onButtons(binding)
+
     }
 
     private fun onButtons(binding: ActivityLogInBinding) {
@@ -38,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
             Firebase.auth.signInWithEmailAndPassword(email, password)
+
 
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("email", email)
@@ -52,3 +52,5 @@ class LoginActivity : AppCompatActivity() {
     }
 
 }
+
+
