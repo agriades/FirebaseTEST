@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
+
         onButtons(binding)
     }
 
