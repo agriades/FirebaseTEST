@@ -1,8 +1,10 @@
-package com.firebase.test
+package com.firebase.test.login
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import com.firebase.test.MainActivity
+import com.firebase.test.signup.SignupActivity
 import com.firebase.test.databinding.ActivityLogInBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -18,7 +20,11 @@ class LoginActivity : Activity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        onLoginButton(binding)
+        onSignupButton(binding)
+    }
 
+    private fun onLoginButton(binding: ActivityLogInBinding) {
         binding.btnLogIn.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
@@ -28,12 +34,12 @@ class LoginActivity : Activity() {
             intent.putExtra("email", email)
             startActivity(intent)
         }
-
+    }
+    private fun onSignupButton(binding: ActivityLogInBinding) {
         binding.btnSignUp.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
-
     }
 
 }

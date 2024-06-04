@@ -1,4 +1,4 @@
-package com.firebase.test
+package com.firebase.test.signup
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
