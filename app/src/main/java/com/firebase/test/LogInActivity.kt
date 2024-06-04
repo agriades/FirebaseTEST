@@ -18,11 +18,12 @@ class LogInActivity : Activity() {
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnLogin.setOnClickListener {
-            val email = binding.etId.text.toString()
+        binding.btnLogIn.setOnClickListener {
+            val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
             Firebase.auth.signInWithEmailAndPassword(email, password)
         }
+
     }
 
 }
