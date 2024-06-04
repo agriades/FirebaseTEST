@@ -1,8 +1,9 @@
 package com.firebase.test.login
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.firebase.test.MainActivity
 import com.firebase.test.databinding.ActivityLogInBinding
 import com.firebase.test.signup.SignupActivity
@@ -14,13 +15,15 @@ import com.google.firebase.ktx.Firebase
  * https://firebase.google.com/docs/auth/android/custom-auth
  */
 
-class LoginActivity : Activity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLogInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
         onButtons(binding)
     }
