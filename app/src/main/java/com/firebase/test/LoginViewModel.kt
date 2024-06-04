@@ -1,4 +1,4 @@
 package com.firebase.test
 
-class AuthViewModel {
+class LoginViewModel {
 }

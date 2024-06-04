@@ -12,7 +12,7 @@ import com.google.firebase.ktx.Firebase
  * https://firebase.google.com/docs/auth/android/custom-auth
  */
 
-class LogInActivity : Activity() {
+class LoginActivity : Activity() {
     private lateinit var binding: ActivityLogInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class LogInActivity : Activity() {
         }
 
         binding.btnSignUp.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
 
