@@ -1,5 +1,6 @@
 package com.firebase.test
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.firebase.test.databinding.ActivitySignUpBinding
@@ -18,5 +19,10 @@ class SignUpActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString()
             Firebase.auth.createUserWithEmailAndPassword(email, password)
         }
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
     }
 }

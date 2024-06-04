@@ -1,6 +1,7 @@
 package com.firebase.test
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import com.firebase.test.databinding.ActivityLogInBinding
 import com.google.firebase.auth.ktx.auth
@@ -22,6 +23,11 @@ class LogInActivity : Activity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
             Firebase.auth.signInWithEmailAndPassword(email, password)
+        }
+
+        binding.btnSignUp.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
 
     }
