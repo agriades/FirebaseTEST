@@ -24,7 +24,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-        onButtons(binding)
+        binding.btnLogIn.setOnClickListener {
+            loginViewModel.loginRequest(binding.tvEmail.text.toString(), binding.tvPassword.text.toString(), false)
+        }
 
     }
 
